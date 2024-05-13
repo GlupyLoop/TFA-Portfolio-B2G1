@@ -1,18 +1,35 @@
-import './assets/main.css'
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Génération de ronds</title>
+  <style>
+    body {
+      margin: 0;
+      overflow: hidden;
+    }
+    canvas {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <canvas id="myCanvas"></canvas>
+  <script>
     const canvas = document.getElementById('myCanvas');
     const ctx = canvas.getContext('2d');
 
-    // canvas
+    // Définir la taille du canvas
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
 
-    const circleSize = 1; // Taille initiale des cercles
-    const spacing = 40; // Espacement entre les cercles
-    const maxEffectSize = 160; // Taille maximale de l'effet de la souris
+    const circleSize = 2; // Taille initiale des cercles
+    const spacing = 30; // Espacement entre les cercles
 
     const circles = [];
 
+    // Créer les cercles alignés
     for (let y = 0; y < canvas.height; y += spacing) {
       for (let x = 0; x < canvas.width; x += spacing) {
         circles.push({ x, y, radius: circleSize });
@@ -26,7 +43,7 @@ import './assets/main.css'
       circles.forEach(circle => {
         ctx.beginPath();
         ctx.arc(circle.x, circle.y, circle.radius, 0, Math.PI * 2);
-        ctx.fillStyle = '#D9D9D9';
+        ctx.fillStyle = '#000000'; // Couleur noire
         ctx.fill();
         ctx.closePath();
       });
@@ -37,42 +54,24 @@ import './assets/main.css'
       const mouseX = event.clientX;
       const mouseY = event.clientY;
 
+      // Augmenter légèrement le rayon des cercles proches de la souris
       circles.forEach(circle => {
         const dx = circle.x - mouseX;
         const dy = circle.y - mouseY;
         const distance = Math.sqrt(dx * dx + dy * dy);
 
-        if (distance < maxEffectSize) {
-          const effectRatio = distance / maxEffectSize;
-          const maxRadiusChange = circleSize * 5; // Changement de rayon maximal
-
-          const radiusChange = maxRadiusChange * (1 - effectRatio); 
-          circle.radius = Math.max(circleSize, circleSize + radiusChange);
+        if (distance < 50) { // Zone d'effet de la souris
+          circle.radius = Math.min(circleSize + 2, circle.radius + 0.5);
         } else if (circle.radius > circleSize) {
-          circle.radius = Math.max(circleSize, circle.radius - 0.2);
+          circle.radius = Math.max(circleSize, circle.radius - 0.5);
         }
       });
 
-      draw();
+      draw(); // Redessiner les cercles après avoir modifié leur taille
     });
 
-    // Réinitialiser la taille des cercles lorsque la souris quitte le canvas
-    canvas.addEventListener('mouseleave', function() {
-        circles.forEach(circle => {
-          circle.radius = circleSize;
-        });
-  
-        draw();
-      });
-
+    // Dessiner les cercles initiaux
     draw();
-
-    canvas.addEventListener('mouseleave', function() {
-        circles.forEach(circle => {
-          circle.radius = circleSize;
-        });
-  
-        draw();
-      });
-
-    draw();
+  </script>
+</body>
+</html>
