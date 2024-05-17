@@ -1,2 +1,34 @@
 @import './base.css';
 
+header {
+    position: relative; /* Assurez-vous que le header est positionné relatif pour que les éléments absolus à l'intérieur puissent se référer à lui */
+    z-index: 1; /* Placez le header au premier plan */
+    padding: 20px;
+}
+
+canvas#myCanvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo img {
+    max-height: 100px;
+}
+
+.links a {
+    color: #fff;
+    text-decoration: none;
+    margin-left: 20px;
+}
+
+.links a:hover {
+    text-decoration: underline;
+}

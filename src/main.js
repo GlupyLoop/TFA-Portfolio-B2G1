@@ -1,11 +1,13 @@
 import './assets/main.css'
 
+"use strict"
+
 const canvas = document.getElementById('myCanvas');
 const ctx = canvas.getContext('2d');
 
 // canvas
-canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
+canvas.width = document.documentElement.clientWidth;
+canvas.height = document.documentElement.clientHeight;
 
 const circleSize = 1; // Taille initiale des cercles
 const spacing = 40; // Espacement entre les cercles
