@@ -1,45 +1,45 @@
-import './assets/main.css'
+// main.js
+"use strict";
 
-"use strict"
+// Import main CSS file
+import './assets/main.css';
 
+// Canvas setup
 const canvas = document.getElementById('myCanvas');
 const ctx = canvas.getContext('2d');
 
-// canvas
-canvas.width = document.documentElement.clientWidth;
-canvas.height = document.documentElement.clientHeight;
+// Resize canvas to full window size
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
 
-const circleSize = 1; // Taille initiale des cercles
-const spacing = 40; // Espacement entre les cercles
-const maxEffectSize = 160; // Taille maximale de l'effet de la souris
-
+// Canvas effect variables
+const circleSize = 1;
+const spacing = 40;
+const maxEffectSize = 160;
 const circles = [];
 
+// Initialize circles on the canvas
 for (let y = 0; y < canvas.height; y += spacing) {
   for (let x = 0; x < canvas.width; x += spacing) {
     circles.push({ x, y, radius: circleSize, isHovered: false });
   }
 }
 
-// Dessiner les cercles
+// Function to draw circles
 function draw() {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
 
   circles.forEach(circle => {
     ctx.beginPath();
     ctx.arc(circle.x, circle.y, circle.radius, 0, Math.PI * 2);
-    if (circle.isHovered) {
-      ctx.fillStyle = '#BA20D3'; // Changer la couleur si le cercle est survolé
-    } else {
-      ctx.fillStyle = '#D9D9D9';
-    }
+    ctx.fillStyle = circle.isHovered ? '#BA20D3' : '#D9D9D9';
     ctx.fill();
     ctx.closePath();
   });
 }
 
-// Fonction pour détecter le passage de la souris
-canvas.addEventListener('mousemove', function(event) {
+// Event listener for mouse movement on the canvas
+canvas.addEventListener('mousemove', (event) => {
   const mouseX = event.clientX;
   const mouseY = event.clientY;
 
@@ -51,7 +51,7 @@ canvas.addEventListener('mousemove', function(event) {
     if (distance < maxEffectSize) {
       circle.isHovered = true;
       const effectRatio = distance / maxEffectSize;
-      const maxRadiusChange = circleSize * 5; // Changement de rayon maximal
+      const maxRadiusChange = circleSize * 5;
       const radiusChange = maxRadiusChange * (1 - effectRatio);
       circle.radius = Math.max(circleSize, circleSize + radiusChange);
     } else {
@@ -63,14 +63,54 @@ canvas.addEventListener('mousemove', function(event) {
   draw();
 });
 
-// Réinitialiser la taille des cercles lorsque la souris quitte le canvas
-canvas.addEventListener('mouseleave', function() {
+// Event listener for when the mouse leaves the canvas
+canvas.addEventListener('mouseleave', () => {
   circles.forEach(circle => {
-    circle.isHovered = false; // Réinitialiser le survol lorsque la souris quitte
+    circle.isHovered = false;
     circle.radius = circleSize;
   });
 
   draw();
 });
 
+// Initial draw call
 draw();
+
+// Vertical slider functionality
+document.addEventListener("DOMContentLoaded", () => {
+  const sections = document.querySelectorAll(".section");
+  let currentSection = 0;
+  let isThrottled = false;
+
+  // Function to scroll to a specific section
+  function scrollToSection(index) {
+    if (index < 0 || index >= sections.length) return;
+    currentSection = index;
+    sections.forEach((section, i) => {
+      section.style.transform = `translateY(${(i - index) * 100}%)`;
+    });
+  }
+
+  // Event listener for mouse wheel scroll
+  document.addEventListener("wheel", (event) => {
+    if (isThrottled) return;
+    isThrottled = true;
+    setTimeout(() => isThrottled = false, 1000);
+
+    if (event.deltaY > 0 && currentSection < sections.length - 1) {
+      scrollToSection(currentSection + 1);
+    } else if (event.deltaY < 0 && currentSection > 0) {
+      scrollToSection(currentSection - 1);
+    }
+  });
+
+  // Initial call to scroll to the current section
+  scrollToSection(currentSection);
+});
+
+// Event listener for window resize to adjust canvas size
+window.addEventListener('resize', () => {
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+  draw();
+});

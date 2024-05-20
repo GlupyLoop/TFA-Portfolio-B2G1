@@ -5,20 +5,31 @@
     <link rel="icon" href="/src/assets/img/gl.svg">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio - Guillaume Laplume</title>
+    <link rel="stylesheet" href="/src/styles.css">
     <script type="module" defer src="/src/main.js"></script>
   </head>
   <body>
+    <!-- Canvas for background effect -->
     <canvas id="myCanvas"></canvas>
+
+    <!-- Header with navigation bar -->
     <header>
       <nav class="navbar">
-          <div class="logo">
-              <img src="/src/assets/img/gl.svg" alt="Logo" class="logo-img">
-          </div>
-          <div class="links">
-              <a href="/whatnext.html">what next ?</a>
-              <a href="/contact.html">Contact</a>
-          </div>
+        <div class="logo">
+          <img src="/src/assets/img/gl.svg" alt="Logo" class="logo-img">
+        </div>
+        <div class="links">
+          <a href="#section1">What next?</a>
+          <a href="#section3">Contact</a>
+        </div>
       </nav>
-  </header>
+    </header>
+
+    <!-- Main content area with sections -->
+    <main>
+      <section id="section1" class="section">Section 1 Content</section>
+      <section id="section2" class="section">Section 2 Content</section>
+      <section id="section3" class="section">Section 3 Content</section>
+    </main>
   </body>
 </html>
