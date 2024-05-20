@@ -1,20 +1,46 @@
 @font-face {
-  font-family: 'Geist';
-  src: 
-    url('/src/assets/Fonts/statics-ttf/Geist-Regular.ttf') format('truetype'),
-    url('/src/assets/Fonts/statics-ttf/Geist-Medium.ttf') format('truetype'),
-    url('/src/assets/Fonts/statics-ttf/Geist-Light.ttf') format('truetype'),
-    url('/src/assets/Fonts/statics-ttf/Geist-Bold.ttf') format('truetype'),
-    url('/src/assets/Fonts/statics-ttf/Geist-Black.ttf') format('truetype'),
-    url('/src/assets/Fonts/statics-ttf/Geist-SemiBold.ttf') format('truetype'),
-    url('/src/assets/Fonts/statics-ttf/Geist-Thin.ttf') format('truetype'),
-    url('/src/assets/Fonts/statics-ttf/Geist-UltraBlack.ttf') format('truetype'),
-    url('/src/assets/Fonts/statics-ttf/Geist-UltraLight.ttf') format('truetype');
+  font-family: 'Geist-Regular';
+  src: url('/src/assets/Fonts/statics-ttf/Geist-Regular.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Geist-Medium';
+  src: url('/src/assets/Fonts/statics-ttf/Geist-Medium.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Geist-Light';
+  src: url('/src/assets/Fonts/statics-ttf/Geist-Light.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Geist-Bold';
+  src: url('/src/assets/Fonts/statics-ttf/Geist-Bold.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Geist-Black';
+  src: url('/src/assets/Fonts/statics-ttf/Geist-Black.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Geist-SemiBold';
+  src: url('/src/assets/Fonts/statics-ttf/Geist-SemiBold.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Geist-Thin';
+  src: url('/src/assets/Fonts/statics-ttf/Geist-Thin.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Geist-UltraBlack';
+  src: url('/src/assets/Fonts/statics-ttf/Geist-UltraBlack.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Geist-UltraLight';
+  src: url('/src/assets/Fonts/statics-ttf/Geist-UltraLight.ttf') format('truetype');
 }
 
 :root {
-  --vt-c-white: #D9D9D9;
+  --vt-c-white: #D1D1D1;
   --vt-c-black: #151515;
+  --vt-c-grey: #232323;
+  --vt-c-rose: #BA20D3;
+  --vt-c-purple: #821BD3;
 }
 
 :root {
@@ -25,7 +51,7 @@
 
 body {
   margin: 0;
-  overflow: hidden;
+  overflow: hidden; 
   color: var(--color-text);
   background: var(--color-background);
   position: relative;
@@ -33,11 +59,8 @@ body {
     color 0.5s,
     background-color 0.5s;
   line-height: 1.6;
-  font-family:'Geist-Bold', sans-serif;
+  font-family: 'Geist-Bold', sans-serif;
   font-size: 18px;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
 
 header {

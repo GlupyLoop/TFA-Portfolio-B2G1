@@ -19,8 +19,9 @@ canvas#myCanvas {
     align-items: center;
 }
 
-.logo img {
-    max-height: 100px;
+#logo-img {
+    height: 50px;
+    width: 50px;
 }
 
 .links a {
