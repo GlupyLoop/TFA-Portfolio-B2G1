@@ -16,18 +16,20 @@ canvas#myCanvas {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem;
+  padding: 20px;
+  margin-left: 20px;
+  margin-right: 50px;
 }
 
 /* Logo image styles */
-#logo-img {
-  height: 50px;
-  width: 50px;
+.logo-img {
+  height: 45px;
+  width: 45px;
 }
 
 /* Links styles */
 .links a {
-  color: #fff;
+  color: #D1D1D1;
   text-decoration: none;
   margin-left: 20px;
 }
@@ -39,7 +41,7 @@ canvas#myCanvas {
 /* Main content styles */
 main {
   scroll-snap-type: y mandatory;
-  overflow-y: auto;
+  overflow-y: scroll;
   height: 100vh;
 }
 
