@@ -163,7 +163,44 @@ main {
   gap: 30px;
 }
 
-#section2, #section3 {
+.rectangle-container {
+  display: flex;
+  justify-content: space-around;
+}
+
+.rectangle {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  width: 350px;
+  height: 250px;
+  border-radius: 30px;
+  box-shadow: 0px 4px 25px 5px rgba(0, 0, 0, 0.25);
+  background-color: var(--vt-c-grey);
+  margin: 20px;
+  padding-left: 50px;
+  padding-right: 50px;
+  cursor: pointer;
+}
+
+.badge {
+  position: absolute;
+  top: -20px;
+  left: -20px;
+  width: 40px;
+  height: 40px;
+  background-color: var(--vt-c-grey);
+  border: solid 2px var(--vt-c-rose);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #FFF; /* Couleur du texte */
+  font-size: 16px;
+}
+
+#section2, #section3, #section4, #section5, #section6 {
   align-items: center;
 }
 
@@ -181,8 +218,8 @@ main {
 
 .button {
   background-color: #232323;
-  width: 180px;
-  height: 60px;
+  width: 160px;
+  height: 50px;
   box-shadow: 0px 4px 25px 5px rgba(0, 0, 0, 0.25);
   border-radius: 30px;
   border: none;
@@ -193,13 +230,19 @@ main {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  font-size: 18px;
+  font-size: 16px;
   cursor: pointer;
   font-family: 'Geist-Bold', sans-serif;
 }
 
 .button img {
   width: 20%;
+}
+
+.button:hover {
+  transform: scale(1.1);
+  -ms-transform: scale(1.1); /* IE 9 */
+  -webkit-transform: scale(1.1); /* Safari 3-8 */
 }
 
 footer {
