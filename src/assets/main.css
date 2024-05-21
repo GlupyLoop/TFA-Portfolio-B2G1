@@ -72,6 +72,13 @@ main {
   justify-content: center;
 }
 
+.highlight {
+  background: linear-gradient(91.29deg, #BA20D3 0.23%, #821BD3 52.52%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
 .button {
   background-color: #232323;
   width: 180px;
