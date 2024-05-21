@@ -118,4 +118,3 @@ window.addEventListener('resize', () => {
 document.getElementById('whatnextButton').addEventListener('click', function() {
   window.location.href = 'whatnext.html'; // Remplacez 'autrepage.html' par l'URL de votre autre page
 });
-
