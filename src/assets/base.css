@@ -45,7 +45,6 @@
   --vt-c-purple: #821BD3;
   --color-background: var(--vt-c-black);
   --color-text: var(--vt-c-white);
-  --section-gap: 160px;
 }
 
 /* Global styles */
@@ -56,7 +55,6 @@ body {
   background: var(--color-background);
   position: relative;
   transition: color 0.5s, background-color 0.5s;
-  line-height: 1.6;
   font-family: 'Geist-Bold', sans-serif;
   font-size: 18px;
 }
@@ -74,6 +72,9 @@ header {
 h1 {
   font-size: 68.66px;
   text-shadow: 4px 4px 2px rgba(124, 124, 124, 0.25);
+}
+h6 {
+  font-size: 22.5px;
 }
 p {
   font-size: 18px;
