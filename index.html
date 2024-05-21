@@ -2,12 +2,27 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8">
-    <link rel="icon" href="/src/assets/img/Logo.svg">
+    <link rel="icon" href="./src/assets/img/Logo.svg">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio - Guillaume Laplume</title>
-    <link rel="stylesheet" href="/src/base.css">
-    <link rel="stylesheet" href="/src/styles.css">
-    <script type="module" src="/src/main.js"></script>
+    <meta name="description" content="Découvrez le portfolio de Guillaume Laplume, un talentueux web designer spécialisé dans la création de sites web modernes et efficaces.">
+    <meta name="keywords" content="Guillaume Laplume, portfolio, web design, graphic design, modern design, creative portfolio">
+    <meta name="author" content="Guillaume Laplume">
+    <meta name="robots" content="index, follow">
+    <!-- Open Graph Tags -->
+    <meta property="og:title" content="Portfolio - Guillaume Laplume">
+    <meta property="og:description" content="Découvrez le portfolio de Guillaume Laplume, un talentueux web designer spécialisé dans la création de sites web modernes et efficaces.">
+    <meta property="og:image" content="https://yourwebsite.com/src/assets/img/Logo.svg">
+    <meta property="og:url" content="https://yourwebsite.com">
+    <meta property="og:type" content="website">
+    <!-- Twitter Card Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Portfolio - Guillaume Laplume">
+    <meta name="twitter:description" content="Découvrez le portfolio de Guillaume Laplume, un talentueux web designer spécialisé dans la création de sites web modernes et efficaces.">
+    <meta name="twitter:image" content="https://yourwebsite.com/src/assets/img/Logo.svg">
+    
+    <link rel="stylesheet" href="./src/base.css">
+    <script type="module" src="./src/main.js"></script>
   </head>
   <body>
     <!-- Canvas for background effect -->
@@ -17,10 +32,10 @@
     <header>
       <nav class="navbar">
         <div class="logo">
-          <a href="/index.html"><img src="/src/assets/img/Logo.svg" alt="Logo" class="logo-img"></a>
+          <a href="./index.html"><img src="./src/assets/img/Logo.svg" alt="Logo"></a>
         </div>
         <div class="links">
-          <a href="/whatnext.html">What next ?</a>
+          <a href="./whatnext.html">What next ?</a>
         </div>
       </nav>
     </header>
@@ -28,7 +43,17 @@
     <!-- Main content area with sections -->
     <main>
       <section id="section1" class="section">
-        <h1>Hey, i'm Guillaume <br> Web Designer.</h1>
+        <h1>Hey, I'm Guillaume <br> Web Designer.</h1>
+        <div class="button-container">
+          <button class="button"><img src="./src/assets/img/Linkedln.svg" alt="Logo - Linkedln">Linkedln</button>
+          <button class="button"><img src="./src/assets/img/Github.svg" alt="Logo - Github">Github</button>
+          <button class="button"><img src="./src/assets/img/Instagram.svg" alt="Logo - Instagram">Instagram</button>
+          <button class="button"><img src="./src/assets/img/Mail.svg" alt="Logo - Mail">Mail</button>
+        </div>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+          labore et dolore magna aliqua. Etiam tempor orci eu lobortis elementum nibh tellus molestie.
+          Urna duis convallis convallis tellus id interdum velit. Feugiat nisl pretium fusce id. Id semper
+          risus in hendrerit gravida rutrum quisque non. Proin fermentum leo vel orci. </p>
       </section>
       <section id="section2" class="section">
         Section 2 Content

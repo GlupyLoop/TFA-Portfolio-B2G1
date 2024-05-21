@@ -14,8 +14,8 @@ canvas.height = window.innerHeight;
 
 // Canvas effect variables
 const circleSize = 1;
-const spacing = 40;
-const maxEffectSize = 160;
+const spacing = 45;
+const maxEffectSize = 250;
 const circles = [];
 
 // Initialize circles on the canvas
