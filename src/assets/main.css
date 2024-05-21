@@ -44,6 +44,7 @@ main {
   scroll-snap-type: y mandatory;
   overflow-y: scroll;
   height: 100vh;
+  z-index: 1;
 }
 
 /* Section styles */
@@ -55,4 +56,9 @@ main {
   font-size: 2rem;
   transition: transform 0.5s ease-in-out;
   scroll-snap-align: start;
+  z-index: 1;
+}
+
+.section-content {
+  z-index: 1;
 }

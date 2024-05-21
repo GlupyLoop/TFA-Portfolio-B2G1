@@ -38,8 +38,8 @@ function draw() {
   });
 }
 
-// Event listener for mouse movement on the canvas
-canvas.addEventListener('mousemove', (event) => {
+// Event listener for mouse movement on the document
+document.addEventListener('mousemove', (event) => {
   const mouseX = event.clientX;
   const mouseY = event.clientY;
 
@@ -63,8 +63,8 @@ canvas.addEventListener('mousemove', (event) => {
   draw();
 });
 
-// Event listener for when the mouse leaves the canvas
-canvas.addEventListener('mouseleave', () => {
+// Event listener for when the mouse leaves the window
+document.addEventListener('mouseleave', () => {
   circles.forEach(circle => {
     circle.isHovered = false;
     circle.radius = circleSize;
