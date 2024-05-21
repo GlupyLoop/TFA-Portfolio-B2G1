@@ -114,3 +114,8 @@ window.addEventListener('resize', () => {
   canvas.height = window.innerHeight;
   draw();
 });
+
+document.getElementById('whatnextButton').addEventListener('click', function() {
+  window.location.href = 'whatnext.html'; // Remplacez 'autrepage.html' par l'URL de votre autre page
+});
+

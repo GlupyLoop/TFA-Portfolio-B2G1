@@ -17,29 +17,106 @@ canvas#myCanvas {
   justify-content: space-between;
   align-items: center;
   padding: 20px;
-  margin-left: 20px;
+  margin-left: 50px;
   margin-right: 50px;
 }
 
 /* Logo image styles */
 .logo {
-  height: 45px;
-  width: 45px;
+  height: 60px;
+  width: 60px;
+  text-shadow: 0px 4px 25px rgba(0, 0, 0, 0.25);
 }
 
 .DWT img{
   width: 70px;
+  text-shadow: 0px 4px 25px rgba(0, 0, 0, 0.25);
 }
 
 /* Links styles */
-.links a {
-  color: #D1D1D1;
+.whatnext {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  outline: none;
+  border: 0;
+  vertical-align: middle;
   text-decoration: none;
-  margin-left: 20px;
+  background: transparent;
+  padding: 0;
+  font-family: 'Geist-Black',sans-serif;
+  font-size: 16px;
+  width: 12rem;
+  height: auto;
 }
 
-.links a:hover {
-  text-decoration: underline;
+.whatnext .circle {
+  transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+  position: relative;
+  display: block;
+  margin: 0;
+  width: 3rem;
+  height: 3rem;
+  background: linear-gradient(91.29deg, #821BD3 0.23%, #BA20D3 52.52%);
+  border-radius: 1.625rem;
+}
+
+.whatnext .circle .icon {
+  transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  background: var(--vt-c-white); /* Remplacez $white par la couleur appropriée */
+}
+
+.whatnext .circle .icon.arrow {
+  transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+  left: 0.625rem;
+  width: 1.125rem;
+  height: 0.125rem;
+  background: none;
+}
+
+.whatnext .circle .icon.arrow::before {
+  position: absolute;
+  content: '';
+  top: -0.25rem;
+  right: 0.0625rem;
+  width: 0.625rem;
+  height: 0.625rem;
+  border-top: 0.125rem solid var(--vt-c-white); /* Remplacez $white par la couleur appropriée */
+  border-right: 0.125rem solid var(--vt-c-white); /* Remplacez $white par la couleur appropriée */
+  transform: rotate(45deg);
+}
+
+.whatnext .button-text {
+  transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 0.75rem 0;
+  margin: 0 0 0 1.85rem;
+  color: var(--vt-c-white); /* Remplacez $black par la couleur appropriée */
+  font-weight: 700;
+  line-height: 1.6;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.whatnext:hover .circle {
+  width: 100%;
+}
+
+.whatnext:hover .circle .icon.arrow {
+  background: var(--vt-c-white); /* Remplacez $white par la couleur appropriée */
+  transform: translate(1rem, 0);
+}
+
+.whatnext:hover .button-text {
+  color: var(--vt-c-white); /* Remplacez $white par la couleur appropriée */
 }
 
 /* Main content styles */
@@ -48,6 +125,19 @@ main {
   overflow-y: scroll;
   height: 100vh;
   z-index: 1;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: none;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(45deg, #821BD3 0%, #BA20D3 100%);
+  border-radius: 10px;
 }
 
 /* Section styles */
