@@ -80,7 +80,7 @@ draw();
 document.addEventListener("DOMContentLoaded", () => {
   const sections = document.querySelectorAll(".section");
   let currentSection = 0;
-  let isThrottled = false;
+  let isThrottled = true;
 
   // Function to scroll to a specific section
   function scrollToSection(index) {
