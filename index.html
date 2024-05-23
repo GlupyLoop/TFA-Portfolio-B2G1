@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8">
     <link rel="icon" href="./src/assets/img/Logo.svg">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,12 +9,14 @@
     <meta name="keywords" content="Guillaume Laplume, portfolio, web design, graphic design, modern design, creative portfolio">
     <meta name="author" content="Guillaume Laplume">
     <meta name="robots" content="index, follow">
+
     <!-- Open Graph Tags -->
     <meta property="og:title" content="Portfolio - Guillaume Laplume">
     <meta property="og:description" content="Découvrez le portfolio de Guillaume Laplume, un talentueux web designer spécialisé dans la création de sites web modernes et efficaces.">
     <meta property="og:image" content="https://yourwebsite.com/src/assets/img/Logo.svg">
     <meta property="og:url" content="https://yourwebsite.com">
     <meta property="og:type" content="website">
+
     <!-- Twitter Card Tags -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Portfolio - Guillaume Laplume">
@@ -23,202 +25,185 @@
 
     <link rel="stylesheet" href="./src/base.css">
     <script type="module" src="./src/main.js"></script>
-  </head>
-  <body>
+</head>
+<body>
     <!-- Canvas for background effect -->
     <canvas id="myCanvas"></canvas>
 
     <div class="waves-container">
-      <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
-        <defs>
-          <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
-        </defs>
-        <g class="parallax">
-          <use xlink:href="#gentle-wave" x="48" y="0" fill="rgba(130, 27, 211, 0.7)" />
-          <use xlink:href="#gentle-wave" x="48" y="3" fill="rgba(130, 27, 211, 0.5)" />
-          <use xlink:href="#gentle-wave" x="48" y="5" fill="rgba(130, 27, 211, 0.3)" />
-        </g>
-      </svg>
+        <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+            <defs>
+                <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+            </defs>
+            <g class="parallax">
+                <use xlink:href="#gentle-wave" x="48" y="0" fill="rgba(130, 27, 211, 0.7)" />
+                <use xlink:href="#gentle-wave" x="48" y="3" fill="rgba(130, 27, 211, 0.5)" />
+                <use xlink:href="#gentle-wave" x="48" y="5" fill="rgba(130, 27, 211, 0.3)" />
+            </g>
+        </svg>
     </div>
 
     <!-- Header with navigation bar -->
     <header>
-      <nav class="navbar">
-        <div class="logo">
-          <a href="./index.html"><svg id="Calque_1" data-name="Calque 1" xmlns:xlink="http://www.w3.org/2000/svg" viewBox="0 0 434.4 345.09">
-            <defs>
-              <style>
-                .cls-1 {
-                  fill: #D1D1D1;
-                  stroke-width: 0px;
-                }
-              </style>
-            </defs>
-            <path class="cls-1" d="M41.02,230.91c.58,5.59,1.81,11.38,3.83,17.36,10.77,31.82,39.36,54.65,72.89,56.69,43.18,2.63,65.69-30.38,65.69-30.38l35.61,21.68c-91.35,96-171.35,22.19-180.65,14.45-7.92-6.6-61.65-65.77-26.7-139.07,13.77-28.87,37.73-51.85,67.53-63.45,71.2-27.72,127.42,24.46,127.42,24.46l-28.39,29.94s-13.68-12.39-35.42-18.26c-54.62-14.75-107.71,30.32-101.83,86.59Z"/>
-            <polygon class="cls-1" points="122.53 240.52 122.53 200.26 221.11 200.26 185.49 240.52 122.53 240.52"/>
-            <polygon class="cls-1" points="244.33 240.52 405.37 240.52 405.37 200.26 281.49 200.26 244.33 240.52"/>
-            <polygon class="cls-1" points="244.33 184.26 284.08 146.06 284.08 0 241.24 0 244.33 184.26"/>
-            <circle class="cls-1" cx="405.37" cy="308.65" r="29.03"/>
-          </svg></a>
-        </div>
-        <button id="whatnextButton" class="whatnext">
-          <span class="circle" aria-hidden="true">
-            <span class="icon arrow"></span>
-          </span>
-          <span class="button-text">What next ?</span>
-        </button>
-      </nav>
+        <nav class="navbar">
+            <div class="logo">
+                <a href="./index.html">
+                    <svg id="Calque_1" data-name="Calque 1" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 434.4 345.09">
+                        <path class="cls-1" d="M41.02,230.91c.58,5.59,1.81,11.38,3.83,17.36,10.77,31.82,39.36,54.65,72.89,56.69,43.18,2.63,65.69-30.38,65.69-30.38l35.61,21.68c-91.35,96-171.35,22.19-180.65,14.45-7.92-6.6-61.65-65.77-26.7-139.07,13.77-28.87,37.73-51.85,67.53-63.45,71.2-27.72,127.42,24.46,127.42,24.46l-28.39,29.94s-13.68-12.39-35.42-18.26c-54.62-14.75-107.71,30.32-101.83,86.59Z" />
+                        <polygon class="cls-1" points="122.53 240.52 122.53 200.26 221.11 200.26 185.49 240.52 122.53 240.52" />
+                        <polygon class="cls-1" points="244.33 240.52 405.37 240.52 405.37 200.26 281.49 200.26 244.33 240.52" />
+                        <polygon class="cls-1" points="244.33 184.26 284.08 146.06 284.08 0 241.24 0 244.33 184.26" />
+                        <circle class="cls-1" cx="405.37" cy="308.65" r="29.03" />
+                    </svg>
+                </a>
+            </div>
+            <button id="whatnextButton" class="whatnext">
+                <span class="circle" aria-hidden="true">
+                    <span class="icon arrow"></span>
+                </span>
+                <span class="button-text">What next ?</span>
+            </button>
+        </nav>
     </header>
 
     <!-- Main content area with sections -->
     <main>
-      <section id="section1" class="section">
-        <h1>Hey, I'm Guillaume <br><span class="highlight">Web Designer.</span></h1>
-        <div class="button-container">
-          <button class="button"><img src="./src/assets/img/Linkedln.svg" alt="Logo - Linkedln">Linkedln</button>
-          <button class="button"><img src="./src/assets/img/Github.svg" alt="Logo - Github">Github</button>
-          <button class="button"><img src="./src/assets/img/Instagram.svg" alt="Logo - Instagram">Instagram</button>
-          <button class="button"><img src="./src/assets/img/Mail.svg" alt="Logo - Mail">Mail</button>
-        </div>
-        <div class="line"></div>
-        <p>Graduate student of web design at the Haute Ecole Albert Jacquard, I am passionate about
-          creation of websites that combine aesthetics and functionality. My portfolio reflects my 
-          commitment to produce unique and intuitive designs, highlighting my skills in design and artistry.
-          Each project represents an opportunity to explore new ideas and push the boundaries of web design.</p>
-      </section>
-      <section id="section2" class="section">
-        <h5 class="summary"><span class="highlight">...</span>/Projects</h5>
-        <div class="rectangle-container">
-          <div class="rectangle">
-            <a href="http://guillaumelaplume.be/projets/helloworld/"><img src="./src/assets/img/Helloworld.jpg" alt=""></a>
-            <div class="badge">1</div>
-            <h5>HelloWorld</h5>
-            <p>Lorem ipsum dolor sit amet, consectetur
-               adipiscing elit, sed do eiusmod tempor 
-               incididunt ut labore et dolore magna.</p>
-          </div>
-          <div class="rectangle">
-            <div class="badge">2</div>
-            <h5>IOLCE</h5>
-            <p>Lorem ipsum dolor sit amet, consectetur
-               adipiscing elit, sed do eiusmod tempor 
-               incididunt ut labore et dolore magna.</p>
-          </div>
-        </div>
-        <div class="rectangle-container">
-          <div class="rectangle">
-            <div class="badge">3</div>
-            <h5>Rethinking UX</h5>
-            <p>Lorem ipsum dolor sit amet, consectetur
-               adipiscing elit, sed do eiusmod tempor 
-               incididunt ut labore et dolore magna.</p>
-          </div>
-          <div class="rectangle">
-            <div class="badge">4</div>
-            <h5>DataPlay</h5>
-            <p>Lorem ipsum dolor sit amet, consectetur
-               adipiscing elit, sed do eiusmod tempor 
-               incididunt ut labore et dolore magna.</p>
-          </div>
-        </div>
-      </section>
-      <section id="section3" class="section">
-        <h5 class="summary"><span class="highlight">...</span>/Experience</h5>
-        <div class="mac-window">
-            <div class="mac-header">
-                <span class="mac-dot green"></span>
-                <span class="mac-dot yellow"></span>
-                <span class="mac-dot red"></span>
+        <section id="section1" class="section">
+            <h1>Hey, I'm Guillaume <br><span class="highlight">Web Designer.</span></h1>
+            <div class="button-container">
+                <button class="button">
+                    <div class="wave"></div>
+                    <span><img src="./src/assets/img/Linkedln.svg" alt="Logo - Linkedln">Linkedln</span>
+                </button>
+                <button class="button">
+                    <div class="wave"></div>
+                    <span><img src="./src/assets/img/Github.svg" alt="Logo - Github">Github</span>
+                </button>
+                <button class="button">
+                    <div class="wave"></div>
+                    <span><img src="./src/assets/img/Instagram.svg" alt="Logo - Instagram">Instagram</span>
+                </button>
+                <button class="button">
+                    <div class="wave"></div>
+                    <span><img src="./src/assets/img/Mail.svg" alt="Logo - Mail">Mail</span>
+                </button>
             </div>
-            <div class="mac-content">
-                <div class="mac-menu">
-                    <button class="arrow left-arrow">←</button>
-                    <div class="menu-text">
-                        <div class="menu-items">
-                            <div class="menu-item">Skills</div>
-                            <div class="menu-item">Software</div>
-                            <div class="menu-item">Item 3</div>
-                        </div>
-                    </div>
-                    <button class="arrow right-arrow">→</button>
+            <div class="line"></div>
+            <p>
+                Graduate student of web design at the Haute Ecole Albert Jacquard, I am passionate about
+                creation of websites that combine aesthetics and functionality. My portfolio reflects my 
+                commitment to produce unique and intuitive designs, highlighting my skills in design and artistry.
+                Each project represents an opportunity to explore new ideas and push the boundaries of web design.
+            </p>
+        </section>
+
+        <section id="section2" class="section">
+            <h5 class="summary"><span class="highlight">...</span>/Projects</h5>
+            <div class="rectangle-container">
+                <div class="rectangle">
+                    <a href="http://guillaumelaplume.be/projets/helloworld/">
+                        <img src="./src/assets/img/Helloworld.jpg" alt="">
+                    </a>
+                    <div class="badge">1</div>
+                    <h5>HelloWorld</h5>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna.</p>
                 </div>
-                <div class="line"></div>
-                <div class="content">
-                    <div class="content-item">
-                      <div class="square-container">
-                        <div class="square">
+                <div class="rectangle">
+                    <div class="badge">2</div>
+                    <h5>IOLCE</h5>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna.</p>
+                </div>
+            </div>
+            <div class="rectangle-container">
+                <div class="rectangle">
+                    <div class="badge">3</div>
+                    <h5>Rethinking UX</h5>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna.</p>
+                </div>
+                <div class="rectangle">
+                    <div class="badge">4</div>
+                    <h5>DataPlay</h5>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="section3" class="section">
+            <h5 class="summary"><span class="highlight">...</span>/Experience</h5>
+            <div class="mac-window">
+                <div class="mac-header">
+                    <span class="mac-dot green"></span>
+                    <span class="mac-dot yellow"></span>
+                    <span class="mac-dot red"></span>
+                </div>
+                <div class="mac-content">
+                    <div class="mac-menu">
+                        <button class="arrow left-arrow">←</button>
+                        <div class="menu-text">
+                            <div class="menu-items">
+                                <div class="menu-item">Skills</div>
+                                <div class="menu-item">Software</div>
+                                <div class="menu-item">Item 3</div>
+                            </div>
                         </div>
-                        <div class="square">
-                        </div>
-                        <div class="square">
-                        </div>
-                        <div class="square">
-                        </div>
-                      </div>
-                      <div class="square-container">
-                        <div class="square">
-                        </div>
-                        <div class="square">
-                        </div>
-                        <div class="square">
-                        </div>
-                        <div class="square">
-                        </div>
-                      </div>
+                        <button class="arrow right-arrow">→</button>
                     </div>
-                    <div class="content-item">
-                        <div class="square-container">
-                          <div class="square">
-                          </div>
-                          <div class="square">
-                          </div>
-                          <div class="square">
-                          </div>
-                          <div class="square">
-                          </div>
+                    <div class="line"></div>
+                    <div class="content">
+                        <div class="content-item">
+                            <div class="square-container">
+                                <div class="square"></div>
+                                <div class="square"></div>
+                                <div class="square"></div>
+                                <div class="square"></div>
+                            </div>
+                            <div class="square-container">
+                                <div class="square"></div>
+                                <div class="square"></div>
+                                <div class="square"></div>
+                                <div class="square"></div>
+                            </div>
                         </div>
-                        <div class="square-container">
-                          <div class="square">
-                          </div>
-                          <div class="square">
-                          </div>
-                          <div class="square">
-                          </div>
-                          <div class="square">
-                          </div>
+                        <div class="content-item">
+                            <div class="square-container">
+                                <div class="square"></div>
+                                <div class="square"></div>
+                                <div class="square"></div>
+                                <div class="square"></div>
+                            </div>
+                            <div class="square-container">
+                                <div class="square"></div>
+                                <div class="square"></div>
+                                <div class="square"></div>
+                                <div class="square"></div>
+                            </div>
                         </div>
-                    </div>
-                    <div class="content-item">
-                      <div class="square-container">
-                        <div class="square">
+                        <div class="content-item">
+                            <div class="square-container">
+                                <div class="square"></div>
+                                <div class="square"></div>
+                                <div class="square"></div>
+                                <div class="square"></div>
+                            </div>
+                            <div class="square-container">
+                                <div class="square"></div>
+                                <div class="square"></div>
+                                <div class="square"></div>
+                                <div class="square"></div>
+                            </div>
                         </div>
-                        <div class="square">
-                        </div>
-                        <div class="square">
-                        </div>
-                        <div class="square">
-                        </div>
-                      </div>
-                      <div class="square-container">
-                        <div class="square">
-                        </div>
-                        <div class="square">
-                        </div>
-                        <div class="square">
-                        </div>
-                        <div class="square">
-                        </div>
-                      </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <!-- Footer for section 3 -->
-        <footer>
-            <a class="DWT" href="https://dwt.heaj.be/"><img src="./src/assets/img/Logo - DWT.svg" alt="Logo - DWT"></a>
-            <p>© Code by Guillaume</p>
-        </footer>
-    </section>
+
+            <!-- Footer for section 3 -->
+            <footer>
+                <a class="DWT" href="https://dwt.heaj.be/">
+                    <img src="./src/assets/img/Logo - DWT.svg" alt="Logo - DWT">
+                </a>
+                <p>© Code by Guillaume</p>
+            </footer>
+        </section>
     </main>
-  </body>
+</body>
 </html>
