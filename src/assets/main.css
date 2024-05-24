@@ -201,6 +201,11 @@ main {
   animation: scroll-animation 2s infinite;
 }
 
+.scroll-down .arrow:hover {
+  animation: none; /* Désactive l'animation en hover */
+  transform: rotate(-45deg) scale(1.2); /* Applique une mise à l'échelle supplémentaire en hover */
+}
+
 @keyframes scroll-animation {
   0% {
     transform: rotate(-45deg) translate(0, 0);
@@ -289,8 +294,7 @@ main {
 
 .summary {
   position: fixed;
-  top: 0;
-  margin-bottom: 0;
+  top: 5%;
 }
 
 .button-container {
@@ -562,4 +566,161 @@ footer {
 
 .content-item.active {
   display: block;
+}
+
+@keyframes scaleUpDown {
+  0%, 100% {
+    transform: scaleY(1) scaleX(1);
+  }
+  50%, 90% {
+    transform: scaleY(1.1);
+  }
+  75% {
+    transform: scaleY(0.95);
+  }
+  80% {
+    transform: scaleX(0.95);
+  }
+}
+
+@keyframes shake {
+  0%, 100% {
+    transform: skewX(0) scale(1);
+  }
+  50% {
+    transform: skewX(5deg) scale(0.9);
+  }
+}
+
+@keyframes particleUp {
+  0% {
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    top: -100%;
+    transform: scale(0.5);
+  }
+}
+
+@keyframes glow {
+  0%, 100% {
+    background-color: #821BD3;
+  }
+  50% {
+    background-color: #BA20D3;
+  }
+}
+
+.fire {
+  position: absolute;
+  top: calc(50% - 50px);
+  left: calc(85% - 50px);
+  width: 200px;
+  height: 200px;
+  background-color: transparent;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.fire-center {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  animation: scaleUpDown 3s ease-out infinite;
+  animation-fill-mode: both;
+}
+
+.fire-center .main-fire {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: radial-gradient(
+    farthest-corner at 10px 0,
+    #821BD3 0%,
+    #BA20D3 95%
+  );
+  transform: scaleX(0.8) rotate(45deg);
+  border-radius: 0 40% 60% 40%;
+}
+
+.fire-center .particle-fire {
+  position: absolute;
+  top: 60%;
+  left: 45%;
+  width: 10px;
+  height: 10px;
+  background-color: #BA20D3;
+  border-radius: 50%;
+  animation: particleUp 2s ease-out infinite;
+  animation-fill-mode: both;
+}
+
+.fire-right {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  animation: shake 2s ease-out infinite;
+  animation-fill-mode: both;
+}
+
+.fire-right .main-fire {
+  position: absolute;
+  top: 15%;
+  right: -25%;
+  width: 80%;
+  height: 80%;
+  background-color: #BA20D3;
+  transform: scaleX(0.8) rotate(45deg);
+  border-radius: 0 40% 60% 40%;
+}
+
+.fire-right .particle-fire {
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  width: 15px;
+  height: 15px;
+  background-color: #BA20D3;
+  transform: scaleX(0.8) rotate(45deg);
+  border-radius: 50%;
+  animation: particleUp 2s ease-out infinite;
+  animation-fill-mode: both;
+}
+
+.fire-left {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  animation: shake 3s ease-out infinite;
+  animation-fill-mode: both;
+}
+
+.fire-left .main-fire {
+  position: absolute;
+  top: 15%;
+  left: -20%;
+  width: 80%;
+  height: 80%;
+  background-color: #BA20D3;
+  transform: scaleX(0.8) rotate(45deg);
+  border-radius: 0 40% 60% 40%;
+}
+
+.fire-left .particle-fire {
+  position: absolute;
+  top: 10%;
+  left: 20%;
+  width: 10%;
+  height: 10%;
+  background-color: #BA20D3;
+  border-radius: 50%;
+  animation: particleUp 3s infinite ease-out;
+  animation-fill-mode: both;
 }
