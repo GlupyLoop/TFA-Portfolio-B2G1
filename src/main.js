@@ -166,3 +166,13 @@ document.addEventListener('DOMContentLoaded', () => {
   // Initialize the content display
   updateContent();
 });
+
+document.querySelectorAll('.scroll-down').forEach(item => {
+  item.addEventListener('click', event => {
+      const targetId = item.getAttribute('data-scroll');
+      const targetElement = document.querySelector(targetId);
+      if (targetElement) {
+          targetElement.scrollIntoView({ behavior: 'smooth' });
+      }
+  });
+});

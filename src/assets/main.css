@@ -173,6 +173,46 @@ main {
   gap: 30px;
 }
 
+#section1 .line {
+  width: 800px;
+}
+
+#section1 p {
+  width: 800px;
+}
+
+/* Styles pour la flèche animée */
+.scroll-down {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+}
+
+.scroll-down .arrow {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  border-left: 6px solid var(--vt-c-white);
+  border-bottom: 6px solid var(--vt-c-white);
+  border-radius: 3px;
+  transform: rotate(-45deg);
+  animation: scroll-animation 2s infinite;
+}
+
+@keyframes scroll-animation {
+  0% {
+    transform: rotate(-45deg) translate(0, 0);
+  }
+  50% {
+    transform: rotate(-45deg) translate(-10px, 10px);
+  }
+  100% {
+    transform: rotate(-45deg) translate(0, 0);
+  }
+}
+
 .rectangle-container, .square-container {
   display: flex;
   justify-content: space-around;
@@ -350,13 +390,14 @@ footer {
   text-align: center;
 }
 
-/* Waves container styles */
+/* Styles pour le conteneur des vagues */
 .waves-container {
   position: relative;
   width: 100%;
-  margin-bottom: -7px; /* Adjust this value to control the overlap */
+  margin-bottom: -7px; /* Ajustez cette valeur pour contrôler le chevauchement */
 }
 
+/* Styles pour les vagues */
 .waves {
   position: fixed;
   bottom: 0;
@@ -364,10 +405,12 @@ footer {
   height: 200px;
 }
 
+/* Animation parallax pour les vagues */
 .parallax > use {
   animation: move-forever 25s cubic-bezier(0.55, 0.5, 0.45, 0.5) infinite;
 }
 
+/* Délais et durées d'animation spécifiques pour chaque vague */
 .parallax > use:nth-child(1) {
   animation-delay: -2s;
   animation-duration: 7s;
@@ -383,6 +426,7 @@ footer {
   animation-duration: 13s;
 }
 
+/* Animation de déplacement */
 @keyframes move-forever {
   0% {
     transform: translate3d(-10px, 0, 0);
@@ -392,6 +436,7 @@ footer {
   }
 }
 
+/* Styles pour les petits écrans */
 @media (max-width: 768px) {
   .waves {
     height: 100px;
