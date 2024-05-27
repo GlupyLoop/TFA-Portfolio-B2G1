@@ -176,3 +176,26 @@ document.querySelectorAll('.scroll-down').forEach(item => {
       }
   });
 });
+
+document.addEventListener('DOMContentLoaded', (event) => {
+  const linkedinButton = document.getElementById('linkedinButton');
+  const githubButton = document.getElementById('githubButton');
+  const instagramButton = document.getElementById('instagramButton');
+  const mailButton = document.getElementById('mailButton');
+
+  linkedinButton.addEventListener('click', () => {
+      window.open('https://www.linkedin.com/in/guillaume-laplume-8ba103117/', '_blank');
+  });
+
+  githubButton.addEventListener('click', () => {
+      window.open('https://github.com/GlupyLoop?tab=repositories', '_blank');
+  });
+
+  instagramButton.addEventListener('click', () => {
+      window.open('https://www.instagram.com/glupy.designs/', '_blank');
+  });
+
+  mailButton.addEventListener('click', () => {
+      window.location.href = 'mailto:guillaume.laplume99@gmail.com';
+  });
+});
