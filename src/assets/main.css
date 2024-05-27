@@ -749,3 +749,17 @@ footer {
   animation: particleUp 3s infinite ease-out;
   animation-fill-mode: both;
 }
+
+.designers {
+  position: absolute;
+  width: 300%; /* 3 fois la largeur des sections pour couvrir toute la longueur */
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+
+.designers img {
+  width: 33.33%; /* Largeur de chaque morceau */
+  height: 100%;
+  float: left;
+}
