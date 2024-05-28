@@ -247,6 +247,10 @@ main {
   transition: transform 0.3s;
 }
 
+.rectangle h5 {
+  margin-bottom: 20px;
+}
+
 .rectangle img {
   display: block;
   opacity: 0;
@@ -415,61 +419,9 @@ button {
 /* Footer styles */
 footer {
   position: fixed;
+  height: 40px;
   bottom: 0;
   text-align: center;
-}
-
-/* Styles pour le conteneur des vagues */
-.waves-container {
-  position: relative;
-  width: 100%;
-  margin-bottom: -7px; /* Ajustez cette valeur pour contrôler le chevauchement */
-}
-
-/* Styles pour les vagues */
-.waves {
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-  height: 200px;
-}
-
-/* Animation parallax pour les vagues */
-.parallax > use {
-  animation: move-forever 25s cubic-bezier(0.55, 0.5, 0.45, 0.5) infinite;
-}
-
-/* Délais et durées d'animation spécifiques pour chaque vague */
-.parallax > use:nth-child(1) {
-  animation-delay: -2s;
-  animation-duration: 15s;
-}
-
-.parallax > use:nth-child(2) {
-  animation-delay: -3s;
-  animation-duration: 15s;
-}
-
-.parallax > use:nth-child(3) {
-  animation-delay: -4s;
-  animation-duration: 15s;
-}
-
-/* Animation de déplacement */
-@keyframes move-forever {
-  0% {
-    transform: translate3d(-10px, 0, 0);
-  }
-  100% {
-    transform: translate3d(85px, 0, 0);
-  }
-}
-
-/* Styles pour les petits écrans */
-@media (max-width: 768px) {
-  .waves {
-    height: 100px;
-  }
 }
 
 /* Mac window styles */
@@ -762,4 +714,109 @@ footer {
   border-radius: 50%;
   animation: particleUp 3s infinite ease-out;
   animation-fill-mode: both;
+}
+
+/* Waves Effect */
+
+.block {
+  width: 100%;
+  height: 175px;
+  background-color: transparent;
+}
+
+.waves-container {
+  position: fixed;
+  width: 100%;
+  height: 175px;
+  overflow: hidden;
+  z-index: -1;
+}
+
+.waves {
+  position: fixed;
+  height: 175px;
+}
+
+.wave {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  background: url(./img/wave.png);
+  width: 100%;
+  height: 175px;
+  background-size: 1500px 200px;
+}
+
+.following {
+  width: 100%;
+  height: 175px;
+  background-color: #BA20D3;
+}
+
+#wave1 {
+  bottom: 0;
+  opacity: 1;
+  z-index: 5;
+  animation: wave_moving 10.5s infinite linear;
+}
+
+#wave2 {
+  bottom: 10px;
+  opacity: 0.5;
+  z-index: 4;
+  animation: wave_moving_reverse 6s infinite linear;
+}
+
+#wave3 {
+  bottom: 15px;
+  opacity: 0.7;
+  z-index: 3;
+  animation: wave_moving 6.5s infinite linear;
+}
+
+#wave4 {
+  bottom: 20px;
+  opacity: 0.4;
+  z-index: 2;
+  animation: wave_moving_reverse 4.5s infinite linear;
+}
+
+#wave5 {
+  bottom: 0;
+  opacity: 0.5;
+  z-index: 1;
+  animation: wave_moving 8s infinite linear;
+}
+
+@keyframes wave_moving {
+  0% {
+    background-position-x: 1500px;
+    transform: translateY(75px);
+  }
+  50% {
+    transform: translateY(75px);
+  }
+  100% {
+    background-position-x: 0px;
+    transform: translateY(75px);
+  }
+}
+
+@keyframes wave_moving_reverse {
+  0% {
+    background-position-x: 0px;
+    transform: translateY(75px);
+  }
+  50% {
+    transform: translateY(0px);
+  }
+  100% {
+    background-position-x: 1500px;
+    transform: translateY(75px);
+  }
+}
+
+#section4 img {
+  position: absolute;
+  top: 30%;
 }

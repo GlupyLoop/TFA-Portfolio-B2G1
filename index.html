@@ -30,19 +30,6 @@
     <!-- Canvas for background effect -->
     <canvas id="myCanvas"></canvas>
 
-    <div class="waves-container">
-        <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
-            <defs>
-                <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
-            </defs>
-            <g class="parallax">
-                <use xlink:href="#gentle-wave" x="48" y="0" fill="rgba(130, 27, 211, 0.3)" />
-                <use xlink:href="#gentle-wave" x="48" y="3" fill="rgba(130, 27, 211, 0.6)" />
-                <use xlink:href="#gentle-wave" x="48" y="5" fill="rgba(130, 27, 211, 1)" />
-            </g>
-        </svg>
-    </div>
-
     <!-- Header with navigation bar -->
     <header>
         <nav class="navbar">
@@ -116,7 +103,7 @@
             <div class="rectangle-container">
                 <div class="rectangle">
                     <a href="http://guillaumelaplume.be/projets/helloworld/">
-                        <img src="./src/assets/img/HelloWorld_Screen.jpg" alt="">
+                        <img src="./src/assets/img/HelloWorld_Screen.png" alt="">
                     </a>
                     <div class="badge">1</div>
                     <h5>HelloWorld</h5>
@@ -124,7 +111,7 @@
                 </div>
                 <div class="rectangle">
                     <a href="https://guillaumelaplume.be/projets/iolce/">
-                        <img src="./src/assets/img/IOLCE_Screen.jpg" alt="">
+                        <img src="./src/assets/img/IOLCE_Screen.png" alt="">
                     </a>
                     <div class="badge">2</div>
                     <h5>IOLCE</h5>
@@ -134,7 +121,7 @@
             <div class="rectangle-container">
                 <div class="rectangle">
                     <a href="https://guillaumelaplume.be/projets/rethinking-ux/">
-                        <img src="./src/assets/img/RUX_Screen.jpg" alt="">
+                        <img src="./src/assets/img/RUX_Screen.png" alt="">
                     </a>
                     <div class="badge">3</div>
                     <h5>Rethinking UX</h5>
@@ -232,5 +219,16 @@
             </footer>
         </section>
     </main>
+    <div class="block"></div>
+    <div class="waves-container">
+        <div class="waves">
+            <div class="wave" id="wave1"></div>
+            <div class="wave" id="wave2"></div>
+            <div class="wave" id="wave3"></div>
+            <div class="wave" id="wave4"></div>
+            <div class="wave" id="wave5"></div>
+        </div>
+        <div class="following"></div>
+    </div>
 </body>
 </html>
