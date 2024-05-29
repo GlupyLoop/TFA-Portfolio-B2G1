@@ -181,6 +181,12 @@ main {
   width: 800px;
 }
 
+#section4 img {
+  position: absolute;
+  top: 30%;
+  width: 86vw; /* La largeur de l'image sera 30% de la largeur de la fenêtre */
+}
+
 /* Styles pour la flèche animée */
 .scroll-down {
   position: absolute;
@@ -814,9 +820,4 @@ footer {
     background-position-x: 1500px;
     transform: translateY(75px);
   }
-}
-
-#section4 img {
-  position: absolute;
-  top: 30%;
 }
