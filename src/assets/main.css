@@ -221,6 +221,7 @@ main {
 .rectangle-container, .square-container {
   display: flex;
   justify-content: space-around;
+  align-items: center;
 }
 
 .rectangle, .square {
