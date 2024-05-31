@@ -323,8 +323,7 @@ main {
 }
 
 .summary {
-  position: fixed;
-  top: 5%;
+  display: none;
 }
 
 .button-container {

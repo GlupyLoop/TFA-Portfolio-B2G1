@@ -199,3 +199,36 @@ document.addEventListener('DOMContentLoaded', (event) => {
       window.location.href = 'mailto:guillaume.laplume99@gmail.com';
   });
 });
+
+document.addEventListener('DOMContentLoaded', function () {
+  const sections = document.querySelectorAll('.section');
+  const summaryElement = document.querySelector('.summary');
+  const spanElement = summaryElement.querySelector('span');
+
+  const options = {
+      root: null,
+      rootMargin: '0px',
+      threshold: 0.5
+  };
+
+  function updateSummary(entry) {
+      if (entry.isIntersecting) {
+          if (entry.target.id === 'section1') {
+              summaryElement.style.display = 'none';
+          } else {
+              summaryElement.style.display = 'block';
+              summaryElement.childNodes[1].nodeValue = `/${entry.target.getAttribute('data-summary')}`;
+          }
+      }
+  }
+
+  const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+          updateSummary(entry);
+      });
+  }, options);
+
+  sections.forEach(section => {
+      observer.observe(section);
+  });
+});
