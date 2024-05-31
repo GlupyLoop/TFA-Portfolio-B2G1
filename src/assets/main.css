@@ -181,12 +181,6 @@ main {
   width: 800px;
 }
 
-#section4 img {
-  position: absolute;
-  top: 30%;
-  width: 86vw; /* La largeur de l'image sera 30% de la largeur de la fenêtre */
-}
-
 /* Styles pour la flèche animée */
 .scroll-down {
   position: absolute;
@@ -208,8 +202,8 @@ main {
 }
 
 .scroll-down .arrow:hover {
-  animation: none; /* Désactive l'animation en hover */
-  transform: rotate(-45deg) scale(1.2); /* Applique une mise à l'échelle supplémentaire en hover */
+  animation: none; 
+  transform: rotate(-45deg) scale(1.2);
 }
 
 @keyframes scroll-animation {
@@ -819,5 +813,35 @@ footer {
   100% {
     background-position-x: 1500px;
     transform: translateY(75px);
+  }
+}
+
+.path {
+  stroke: black;
+  stroke-width: 2;
+  fill: none;
+  stroke-dasharray: 1500;
+  stroke-dashoffset: 1500;
+  animation: draw 4s forwards;
+}
+
+.fill {
+  fill: url(#paint0_linear_186_3);
+  animation: fill 2s forwards;
+  animation-delay: 4s;
+}
+
+@keyframes draw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes fill {
+  from {
+    fill-opacity: 0;
+  }
+  to {
+    fill-opacity: 1;
   }
 }
