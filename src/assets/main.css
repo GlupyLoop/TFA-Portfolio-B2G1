@@ -238,8 +238,14 @@ main {
   transition: all 0.3s ease;
 }
 
-.square {
-  margin: 20px;
+.skill {
+  fill: var(--vt-c-white);
+  width: 75px;
+  height: auto;
+}
+
+.square img {
+  fill: #D1D1D1;
 }
 
 .rectangle {
