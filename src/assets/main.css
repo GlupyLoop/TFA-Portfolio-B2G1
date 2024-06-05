@@ -831,3 +831,91 @@ footer {
     fill-opacity: 1;
   }
 }
+
+ /* Styles pour les tablettes en paysage et les petits ordinateurs portables */
+
+@media (min-width: 1025px) and (max-width: 1280px) {
+
+}
+
+/* Styles pour les appareils mobiles */
+
+@media (max-width: 767px) {
+    .logo{
+      width: 45px;
+    }
+    h1{
+      font-size: 45px;
+    }
+    p {
+      font-size: 16px;
+    }
+    #section1 .line {
+      width: 325px;
+    }
+    #section1 p {
+      width: 325px;
+    }
+    .fire {
+      display: none;
+    }
+    .rectangle-container {
+      flex-direction: column;
+    }
+    .rectangle {
+      width: 200px;
+      height: 150px;
+      margin: 15px;
+    }
+
+    .rectangle p {
+      font-size: 13px;
+    }
+
+    .rectangle h5 {
+      font-size: 24px;
+      margin-bottom: 5px;
+    }
+
+    .mac-window {
+      width: 325px;
+    }
+
+    #section4 svg {
+      width: 450px;
+    }
+}
+
+/* Styles pour les tablettes */
+
+@media (min-width: 768px) and (max-width: 1500px) {
+  h1{
+    font-size: 55px;
+  }
+
+  .fire {
+    display: none;
+  }
+
+  .rectangle {
+    width: 250px;
+    height: 200px;
+  }
+
+  .rectangle p {
+    font-size: 16px;
+  }
+
+  .rectangle h5 {
+    font-size: 25px;
+    margin-bottom: 5px;
+  }
+
+  .mac-window {
+    width: 725px;
+  }
+
+  #section4 svg {
+    width: 750px;
+  }
+}
