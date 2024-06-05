@@ -218,13 +218,13 @@ main {
   }
 }
 
-.rectangle-container, .square-container {
+.rectangle-container {
   display: flex;
   justify-content: space-around;
   align-items: center;
 }
 
-.rectangle, .square {
+.rectangle {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -236,16 +236,6 @@ main {
   padding: 0 50px;
   cursor: pointer;
   transition: all 0.3s ease;
-}
-
-.skill {
-  fill: var(--vt-c-white);
-  width: 75px;
-  height: auto;
-}
-
-.square img {
-  fill: #D1D1D1;
 }
 
 .rectangle {
@@ -299,17 +289,7 @@ main {
   opacity: 1;
 }
 
-.square {
-  width: 100px;
-  height: 180px;
-  cursor: default;
-}
-
-.square:hover {
-  background-color: rgba(21, 21, 21, 1.1);
-}
-
-#section2, #section3, #section4, #section5, #section6 {
+#section2, #section3, #section4, #section5, #section6, #section7 {
   align-items: center;
 }
 
