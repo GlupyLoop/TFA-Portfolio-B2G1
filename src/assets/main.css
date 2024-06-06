@@ -133,7 +133,6 @@ canvas#myCanvas {
 /* Main content styles */
 main {
   display: block;
-  padding: 0 15%;
   scroll-snap-type: y mandatory;
   overflow-y: scroll;
   height: 100vh;
@@ -154,6 +153,7 @@ main {
 }
 
 /* Section styles */
+
 .section {
   height: calc(100vh - 40px);
   display: flex;
@@ -163,22 +163,13 @@ main {
   transition: transform 0.5s ease-in-out;
   scroll-snap-align: start;
   z-index: 1;
+  flex-wrap: wrap;
 }
 
-.section-content {
-  z-index: 1;
-}
-
-#section1 {
-  gap: 30px;
-}
-
-#section1 .line {
-  width: 800px;
-}
-
-#section1 p {
-  width: 800px;
+.main-content {
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
 }
 
 /* Styles pour la flèche animée */
@@ -218,10 +209,14 @@ main {
   }
 }
 
-.rectangle-container {
+.rectangle-container-main {
   display: flex;
-  justify-content: space-around;
-  align-items: center;
+}
+
+.rectangle-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
 }
 
 .rectangle {
@@ -236,16 +231,17 @@ main {
   padding: 0 50px;
   cursor: pointer;
   transition: all 0.3s ease;
-}
-
-.rectangle {
   width: 350px;
   height: 250px;
   transition: transform 0.3s;
 }
 
 .rectangle h5 {
-  margin-bottom: 20px;
+  margin-bottom: 10px;
+  background: linear-gradient(91.29deg, #BA20D3 0.23%, #821BD3 52.52%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 .rectangle img {
@@ -293,6 +289,18 @@ main {
   align-items: center;
 }
 
+#section1 {
+  display: flex;
+  flex-direction: column;
+  gap: 25px; 
+  padding-left: 100px;
+  padding-right: 100px;
+}
+
+h5.summary {
+  font-size: 24px;
+}
+
 .badge {
   position: absolute;
   top: -20px;
@@ -308,10 +316,6 @@ main {
   font-size: 16px;
 }
 
-.summary {
-  display: none;
-}
-
 .button-container {
   display: flex;
   gap: 20px;
@@ -325,7 +329,8 @@ main {
 }
 
 /* Button styles */
-button {
+
+.button {
   font-size: 16px;
   font-family: 'Geist-Bold', sans-serif;
   padding: 15px 25px;
@@ -412,8 +417,8 @@ footer {
 
 /* Mac window styles */
 .mac-window {
-  width: 1100px;
-  height: 650px;
+  width: 75%;
+  height: 75%;
   background: rgba(0, 0, 0, 0.4);
   border-radius: 30px;
   overflow: hidden;
@@ -832,38 +837,31 @@ footer {
   }
 }
 
- /* Styles pour les tablettes en paysage et les petits ordinateurs portables */
-
-@media (min-width: 1025px) and (max-width: 1280px) {
-
-}
-
 /* Styles pour les appareils mobiles */
 
 @media (max-width: 767px) {
     .logo{
       width: 45px;
     }
+
     h1{
-      font-size: 45px;
+      font-size: 40px;
     }
+
     p {
       font-size: 16px;
     }
-    #section1 .line {
-      width: 325px;
-    }
-    #section1 p {
-      width: 325px;
-    }
+
     .fire {
       display: none;
     }
+
     .rectangle-container {
-      flex-direction: column;
+      grid-template-columns: 1fr;
     }
+
     .rectangle {
-      width: 200px;
+      width: 250px;
       height: 150px;
       margin: 15px;
     }
@@ -877,24 +875,38 @@ footer {
       margin-bottom: 5px;
     }
 
-    .mac-window {
-      width: 325px;
-    }
-
     #section4 svg {
       width: 450px;
     }
-}
 
+    .button {
+      padding: 12px 30px;
+      border-radius: 20px;
+    }
+  
+    .button img {
+      width: 18px;
+    }
+
+    .whatnext {
+      display: none;
+    }
+
+    .rectangle-container-main {
+      display: flex;
+      flex-direction: column;
+    }
+
+    h5.summary {
+      font-size: 20px;
+    }
+  }
+  
 /* Styles pour les tablettes */
 
 @media (min-width: 768px) and (max-width: 1500px) {
   h1{
     font-size: 55px;
-  }
-
-  .fire {
-    display: none;
   }
 
   .rectangle {
@@ -911,11 +923,11 @@ footer {
     margin-bottom: 5px;
   }
 
-  .mac-window {
-    width: 725px;
-  }
-
   #section4 svg {
     width: 750px;
+  }
+
+  .fire {
+    display: none;
   }
 }

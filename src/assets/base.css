@@ -41,7 +41,7 @@
   --vt-c-white: #D1D1D1;
   --vt-c-black: #151515;
   --vt-c-grey: #232323;
-  --vt-c-rose: #BA20D3;
+  --vt-c-rose: #bb20d3;
   --vt-c-purple: #821BD3;
   --color-background: var(--vt-c-black);
   --color-text: var(--vt-c-white);
@@ -95,6 +95,7 @@ h4 {
 h5 {
   font-size: 28.13px;
   margin: 0;
+  font-family: 'Geist-UltraBlack';
 }
 h6 {
   font-size: 22.5px;
