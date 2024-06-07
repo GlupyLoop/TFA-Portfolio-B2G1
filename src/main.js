@@ -137,50 +137,41 @@ document.getElementById('whatnextButton').addEventListener('click', function() {
 
 //défilement mac
 
+// scripts.js
 document.addEventListener('DOMContentLoaded', () => {
-  const menuItems = document.querySelector('.menu-items');
+  const menuItems = document.querySelectorAll('.menu-item');
   const contentItems = document.querySelectorAll('.content-item');
-  const menuItemElements = document.querySelectorAll('.menu-item');
-  const leftArrow = document.querySelector('.left-arrow');
-  const rightArrow = document.querySelector('.right-arrow');
-  let currentIndex = 0;
 
-  function updateContent() {
-      menuItemElements.forEach((item, index) => {
-          item.classList.remove('previous', 'active', 'next');
-          if (index === currentIndex) {
-              item.classList.add('active');
-          } else if (index === (currentIndex - 1 + menuItemElements.length) % menuItemElements.length) {
-              item.classList.add('previous');
-          } else if (index === (currentIndex + 1) % menuItemElements.length) {
-              item.classList.add('next');
-          }
-      });
-
-      contentItems.forEach((item, index) => {
-          item.classList.toggle('active', index === currentIndex);
-      });
-  }
-
-  leftArrow.addEventListener('click', () => {
-      currentIndex = (currentIndex > 0) ? currentIndex - 1 : contentItems.length - 1;
-      updateContent();
-  });
-
-  rightArrow.addEventListener('click', () => {
-      currentIndex = (currentIndex < contentItems.length - 1) ? currentIndex + 1 : 0;
-      updateContent();
-  });
-
-  menuItemElements.forEach((item, index) => {
+  menuItems.forEach(item => {
       item.addEventListener('click', () => {
-          currentIndex = index;
-          updateContent();
+          const index = item.getAttribute('data-index');
+
+          menuItems.forEach(item => item.classList.remove('active'));
+          item.classList.add('active');
+
+          contentItems.forEach(content => content.classList.remove('active'));
+          contentItems[index].classList.add('active');
       });
   });
 
-  // Initialize the content display
-  updateContent();
+  document.querySelector('.left-arrow').addEventListener('click', () => {
+      changeContent(-1);
+  });
+
+  document.querySelector('.right-arrow').addEventListener('click', () => {
+      changeContent(1);
+  });
+
+  function changeContent(direction) {
+      let currentIndex = Array.from(menuItems).findIndex(item => item.classList.contains('active'));
+      currentIndex = (currentIndex + direction + menuItems.length) % menuItems.length;
+
+      menuItems.forEach(item => item.classList.remove('active'));
+      menuItems[currentIndex].classList.add('active');
+
+      contentItems.forEach(content => content.classList.remove('active'));
+      contentItems[currentIndex].classList.add('active');
+  }
 });
 
 document.querySelectorAll('.scroll-down').forEach(item => {
