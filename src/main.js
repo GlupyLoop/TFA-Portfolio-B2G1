@@ -8,37 +8,54 @@ import './assets/main.css';
 const canvas = document.getElementById('myCanvas');
 const ctx = canvas.getContext('2d');
 
-// Resize canvas to full window size
-canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
-
-// Canvas effect variables
+// Circle properties
 const circleSize = 1;
 const spacing = 45;
 const maxEffectSize = 250;
 const circles = [];
 
-// Initialize circles on the canvas
-for (let y = 0; y < canvas.height; y += spacing) {
-  for (let x = 0; x < canvas.width; x += spacing) {
-    circles.push({ x, y, radius: circleSize, isHovered: false });
+// Resize and redraw function
+function resizeAndRedraw() {
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+
+  // Recalculate circle positions
+  circles.length = 0; // Clear existing circles
+  for (let y = circleSize; y < canvas.height; y += spacing) {
+    for (let x = circleSize; x < canvas.width; x += spacing) {
+      circles.push({ 
+        x, 
+        y, 
+        originalRadius: circleSize, 
+        targetRadius: circleSize, 
+        currentRadius: circleSize,
+        isHovered: false 
+      });
+    }
   }
+
+  draw();
 }
 
-// Function to draw circles
+// Draw function
 function draw() {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
 
   circles.forEach(circle => {
+    // Smooth radius transition
+    circle.currentRadius += (circle.targetRadius - circle.currentRadius) * 0.1;
+
     ctx.beginPath();
-    ctx.arc(circle.x, circle.y, circle.radius, 0, Math.PI * 2);
+    ctx.arc(circle.x, circle.y, circle.currentRadius, 0, Math.PI * 2);
     ctx.fillStyle = circle.isHovered ? '#BA20D3' : '#D9D9D9';
     ctx.fill();
     ctx.closePath();
   });
+
+  requestAnimationFrame(draw); // Optimize with requestAnimationFrame
 }
 
-// Event listener for mouse movement on the document
+// Event listener for mouse movement
 document.addEventListener('mousemove', (event) => {
   const mouseX = event.clientX;
   const mouseY = event.clientY;
@@ -51,30 +68,29 @@ document.addEventListener('mousemove', (event) => {
     if (distance < maxEffectSize) {
       circle.isHovered = true;
       const effectRatio = distance / maxEffectSize;
-      const maxRadiusChange = circleSize * 5;
+      const maxRadiusChange = circle.originalRadius * 5;
       const radiusChange = maxRadiusChange * (1 - effectRatio);
-      circle.radius = Math.max(circleSize, circleSize + radiusChange);
+      circle.targetRadius = Math.max(circle.originalRadius, circle.originalRadius + radiusChange);
     } else {
       circle.isHovered = false;
-      circle.radius = circleSize;
+      circle.targetRadius = circle.originalRadius;
     }
   });
-
-  draw();
 });
 
-// Event listener for when the mouse leaves the window
+// Event listener for mouse leaving the window
 document.addEventListener('mouseleave', () => {
   circles.forEach(circle => {
     circle.isHovered = false;
-    circle.radius = circleSize;
+    circle.targetRadius = circle.originalRadius;
   });
-
-  draw();
 });
 
-// Initial draw call
-draw();
+// Event listener for window resize
+window.addEventListener('resize', resizeAndRedraw);
+
+// Initial setup
+resizeAndRedraw();
 
 // Vertical slider functionality
 document.addEventListener("DOMContentLoaded", () => {
@@ -233,3 +249,9 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 });
 
+const menuToggle = document.getElementById("menu-toggle");
+const menu = document.querySelector(".menu");
+
+menuToggle.addEventListener("change", () => {
+  menu.style.display = menuToggle.checked ? "block" : "none";
+});

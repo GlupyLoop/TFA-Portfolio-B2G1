@@ -45,6 +45,10 @@ canvas#myCanvas {
   transform: scale(1.2);
 }
 
+.designer {
+  font-size: 15vw;
+}
+
 /* Links styles */
 .whatnext {
   position: relative;
@@ -158,7 +162,7 @@ main {
   height: calc(100vh - 40px);
   display: flex;
   justify-content: center;
-  flex-direction: column;
+  align-items: center;
   font-size: 2rem;
   transition: transform 0.5s ease-in-out;
   scroll-snap-align: start;
@@ -166,10 +170,29 @@ main {
   flex-wrap: wrap;
 }
 
-.main-content {
+.content1 {
   display: flex;
   flex-direction: column;
-  justify-items: center;
+  gap: 25px;
+  flex: 1;
+  max-width: 60%;
+  margin-right: 60px;
+}
+
+.content2{
+  display: flex;
+  margin-left: 60px;
+}
+
+#section2, #section3, #section4, #section5, #section6, #section7 {
+  align-items: center;
+}
+
+#section1 {
+  display: flex;
+  padding-left: 100px;
+  padding-right: 100px;
+  gap: 25px;
 }
 
 /* Styles pour la flèche animée */
@@ -285,18 +308,6 @@ main {
   opacity: 1;
 }
 
-#section2, #section3, #section4, #section5, #section6, #section7 {
-  align-items: center;
-}
-
-#section1 {
-  display: flex;
-  flex-direction: column;
-  gap: 25px; 
-  padding-left: 100px;
-  padding-right: 100px;
-}
-
 h5.summary {
   font-size: 24px;
 }
@@ -317,7 +328,6 @@ h5.summary {
 }
 
 .button-container {
-  display: flex;
   gap: 20px;
 }
 
@@ -543,11 +553,87 @@ footer {
 }
 
 .content-item {
+  flex: 0 0 100%; /* Chaque item prend 100% de la largeur du conteneur */
+  min-width: 100%; 
+  padding: 20px;   /* Espacement intérieur pour une meilleure lisibilité */
+  box-sizing: border-box; /* Inclut le padding dans la largeur totale */
+}
+
+.menu-container {
+  position: relative;
   display: none;
 }
 
-.content-item.active {
+.menu-icon {
+  font-size: 40px;
+  cursor: pointer;
+  z-index: 10;
+  transition: transform 0.3s ease;
+}
+
+.menu-icon:hover {
+  transform: rotate(90deg);
+}
+
+#menu-toggle:checked ~ .menu-icon {
+  transform: rotate(90deg) !important;
+}
+
+.menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  transform: translateX(-100%);
+  transition: transform 0.3s ease-in-out;
+  z-index: 9;
+}
+
+.menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.menu a {
   display: block;
+  padding: 20px;
+  text-decoration: none;
+  color: #333;
+  font-size: 30px;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.menu a:hover {
+  transform: translateX(10px); 
+  background-color: #f0f0f0;
+}
+
+#menu-toggle:checked ~ .menu {
+  transform: translateX(0);
+}
+
+#menu-toggle {
+  display: none;
+}
+
+#menu-toggle:checked ~ .menu {
+  display: block;
+}
+
+.menu-close {
+  position: absolute;
+  right: 20px;
+  font-size: 60px;
+  cursor: pointer;
+  z-index: 11;
 }
 
 @keyframes scaleUpDown {
@@ -601,15 +687,17 @@ footer {
 }
 
 .fire {
-  position: absolute;
-  top: calc(50% - 50px);
-  left: calc(85% - 50px);
+  position: relative;
+  top: 0;
+  left: 0;
   width: 200px;
   height: 200px;
   background-color: transparent;
   margin-left: auto;
   margin-right: auto;
+  margin-top: 40px;
 }
+
 
 .fire-center {
   position: absolute;
@@ -841,7 +929,7 @@ footer {
 
 @media (max-width: 767px) {
     .logo{
-      width: 45px;
+      width: 60px;
     }
 
     h1{
@@ -860,6 +948,12 @@ footer {
       grid-template-columns: 1fr;
     }
 
+    #section1 {
+      padding-left: 50px;
+      padding-right: 50px;
+      gap: 0;
+    }
+
     .rectangle {
       width: 250px;
       height: 150px;
@@ -875,13 +969,14 @@ footer {
       margin-bottom: 5px;
     }
 
-    #section4 svg {
-      width: 450px;
+    .button {
+      padding: 12px 16px;
+      border-radius: 20px;
+      margin-bottom: 10px;
     }
 
-    .button {
-      padding: 12px 30px;
-      border-radius: 20px;
+    .button span {
+      font-size: 14px;
     }
   
     .button img {
@@ -900,6 +995,20 @@ footer {
     h5.summary {
       font-size: 20px;
     }
+
+    .menu-container {
+      display: block;
+    }
+
+    .content1 {
+      max-width: 100%;
+      margin-right: 0;
+    }
+    
+    .content2{
+      margin-left: 0;
+    }
+  
   }
   
 /* Styles pour les tablettes */
@@ -907,6 +1016,12 @@ footer {
 @media (min-width: 768px) and (max-width: 1500px) {
   h1{
     font-size: 55px;
+  }
+
+  .button {
+    padding: 12px 16px;
+    border-radius: 20px;
+    margin-bottom: 10px;
   }
 
   .rectangle {
@@ -923,11 +1038,16 @@ footer {
     margin-bottom: 5px;
   }
 
-  #section4 svg {
-    width: 750px;
+  .content1 {
+    margin-right: 30px;
+  }
+  
+  .content2{
+    margin-left: 30px;
   }
 
   .fire {
-    display: none;
+    width: 150px;
+    height: 150px;
   }
 }
