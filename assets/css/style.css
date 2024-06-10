@@ -31,7 +31,7 @@ canvas#myCanvas {
 }
 
 .cls-1 {
-  fill: #D1D1D1;
+  fill: var(--vt-c-white);
   stroke-width: 0px;
 }
 
@@ -202,8 +202,17 @@ main {
   padding-right: 100px;
 }
 
+#section4 {
+  flex-direction: column;
+}
+
 #section4, #section5, #section6 {
   opacity: 1;
+}
+
+.mobile_img {
+  width: 350px;
+  height: auto;
 }
 
 /* Styles pour la flèche animée */
