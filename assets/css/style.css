@@ -303,9 +303,12 @@ main {
   width: 200px;
   height: 60px;
   border-radius: 30px;
+  cursor: pointer;
+  font-family: 'Geist-Bold', sans-serif;
+  font-size: 16px;
 }
 
-.rond_container { /* Nom de la classe changé ici */
+.rond_container {
   display: flex;
   justify-content: center;
   align-items: flex-end;
@@ -318,15 +321,15 @@ main {
   height: 50px;
   border-radius: 50%;
   background: linear-gradient(91.29deg, #821BD3 0.23%, #BA20D3 52.52%);
-  animation: rebond 3s ease-in-out infinite; /* Applique l'animation */
+  animation: rebond 3s ease-in-out infinite;
 }
 
 .rond:nth-child(2) {
-  animation-delay: 0.3s; /* Délai pour le deuxième rond */
+  animation-delay: 0.3s;
 }
 
 .rond:nth-child(3) {
-  animation-delay: 0.6s; /* Délai pour le troisième rond */
+  animation-delay: 0.6s;
 }
 
 @keyframes rebond {
@@ -334,7 +337,7 @@ main {
     transform: translateY(0);
   }
   50% {
-    transform: translateY(-40px); /* Hauteur du rebond */
+    transform: translateY(-40px);
   }
   100% {
     transform: translateY(0);
@@ -1275,6 +1278,12 @@ footer {
       flex: 1 100%;
       height: 50%;
     }
+
+    .button_example1, .button_example2 {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+    }
   }
   
 /* Styles pour les tablettes */
@@ -1323,5 +1332,10 @@ footer {
 
   .main-title {
     font-size: 100px;
+  }
+  
+  .example1, .example2, .example3, .example4, .example5{
+    width: 180px;
+    height: 50px;
   }
 }
