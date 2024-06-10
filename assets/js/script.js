@@ -246,3 +246,23 @@ const menu = document.querySelector(".menu");
 menuToggle.addEventListener("change", () => {
   menu.style.display = menuToggle.checked ? "block" : "none";
 });
+
+const sections = document.querySelectorAll('.section');
+
+function handleIntersection(entries, observer) {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('active');
+    } else {
+      entry.target.classList.remove('active'); // Retire la classe 'active' quand la section n'est plus visible
+    }
+  });
+}
+
+const observer = new IntersectionObserver(handleIntersection, {
+  threshold: 0.5 // Déclenche l'animation lorsque 50% de la section est visible
+});
+
+sections.forEach(section => {
+  observer.observe(section);
+});

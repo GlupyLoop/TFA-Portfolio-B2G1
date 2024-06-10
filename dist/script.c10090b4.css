@@ -1,5 +1,113 @@
+/* Font-face declarations */
+@font-face {
+    font-family: 'Geist-Regular';
+    src: url('/Geist-Regular.4c545c93.ttf') format('truetype');
+  }
+  @font-face {
+    font-family: 'Geist-Medium';
+    src: url('/Geist-Medium.03d52c02.ttf') format('truetype');
+  }
+  @font-face {
+    font-family: 'Geist-Light';
+    src: url('/Geist-Light.01a2662a.ttf') format('truetype');
+  }
+  @font-face {
+    font-family: 'Geist-Bold';
+    src: url('/Geist-Bold.0c8b4b5e.ttf') format('truetype');
+  }
+  @font-face {
+    font-family: 'Geist-Black';
+    src: url('/Geist-Black.ee34ae4d.ttf') format('truetype');
+  }
+  @font-face {
+    font-family: 'Geist-SemiBold';
+    src: url('/Geist-SemiBold.905b9f28.ttf') format('truetype');
+  }
+  @font-face {
+    font-family: 'Geist-Thin';
+    src: url('/Geist-Thin.e0163296.ttf') format('truetype');
+  }
+  @font-face {
+    font-family: 'Geist-UltraBlack';
+    src: url('/Geist-UltraBlack.d8826326.ttf') format('truetype');
+  }
+  @font-face {
+    font-family: 'Geist-UltraLight';
+    src: url('/Geist-UltraLight.b4899080.ttf') format('truetype');
+  }
+  
+  /* Color variables */
+  :root {
+    --vt-c-white: #D1D1D1;
+    --vt-c-black: #151515;
+    --vt-c-grey: #232323;
+    --vt-c-rose: #bb20d3;
+    --vt-c-purple: #821BD3;
+    --color-background: var(--vt-c-black);
+    --color-text: var(--vt-c-white);
+  }
+  
+  /* Global styles */
+  body {
+    overflow: hidden;
+    margin: 0;
+    color: var(--color-text);
+    background: var(--color-background);
+    position: relative;
+    transition: color 0.5s, background-color 0.5s;
+    font-family: 'Geist-Bold', sans-serif;
+    font-size: 18px;
+  }
+  
+  .line {
+    width: auto;
+    height: 0px;
+    border: 1px solid #838383;
+  }
+  
+  /* Header styles */
+  header {
+    font-family: 'Geist-Black', sans-serif;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+  }
+  
+  /* Fonts sizes */
+  h1 {
+    font-size: 68.66px;
+    text-shadow: 4px 4px 2px rgba(124, 124, 124, 0.25);
+    margin: 0;
+  }
+  h2 {
+    font-size: 54.93px;
+    margin: 0;
+  }
+  h3 {
+    font-size: 43.95px;
+    margin: 0;
+  }
+  h4 {
+    font-size: 35.16px;
+    margin: 0;
+  }
+  h5 {
+    font-size: 28.13px;
+    margin: 0;
+    font-family: 'Geist-UltraBlack';
+  }
+  h6 {
+    font-size: 22.5px;
+    margin: 0;
+  }
+  p {
+    font-size: 18px;
+    line-height: 200%;
+    margin: 0;
+  }
+  
 /* Import base styles */
-@import '/assets/css/base.css';
 
 /* Canvas styles */
 canvas#myCanvas {
@@ -903,7 +1011,7 @@ footer {
   position: fixed;
   bottom: 0;
   left: 0;
-  background: url(/assets/img/wave.png);
+  background: url(/wave.a8daedb0.png);
   width: 100%;
   height: 175px;
   background-size: 1500px 200px;
@@ -1149,3 +1257,5 @@ footer {
     height: 150px;
   }
 }
+
+/*# sourceMappingURL=/script.c10090b4.css.map */
