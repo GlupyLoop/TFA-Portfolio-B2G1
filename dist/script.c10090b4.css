@@ -386,7 +386,7 @@ main {
 }
 
 .main-title {
-  font-size: 160px;
+  font-size: 140px;
   display: flex;
   justify-content: center;
 }
@@ -517,7 +517,7 @@ main {
   justify-content: center;
   position: relative;
   border-radius: 30px;
-  box-shadow: 0px 4px 25px 5px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 0 20px 1px #000000;
   background-color: var(--vt-c-grey);
   margin: 30px;
   padding: 0 50px;
@@ -610,20 +610,29 @@ h5.summary {
 
 .block_container {
   display: flex; 
-  justify-content: space-around; 
-  padding-left: 150px;
-  padding-right: 150px;
+  justify-content: center;
+  align-items: center;
   gap: 50px;
   margin-bottom: 70px;
 }
 
 .block {
-  width: 300px; 
+  display: flex;
+  flex-direction: column;
   text-align: center; 
   padding: 25px;
-  border: solid 4px black;
   border-radius: 30px;
-  background-color: #BA20D3;
+}
+
+.block p{
+  font-size: 16px;
+}
+
+.block_container .block {
+  width: 400px; 
+  height: 200px;
+  background-color: var(--vt-c-grey);
+  box-shadow: 0 0 20px 1px #000000;
 }
 
 .block img {
@@ -1416,6 +1425,27 @@ footer {
       flex-direction: column;
       gap: 30px;
     }
+
+    .block_container {
+      flex-direction: column;
+    }
+
+    .block_container .block {
+      width: 300px; 
+      height: 150px;
+    }
+    
+    .wrapper-column {
+      padding: 0;
+  }
+
+  .rond {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: linear-gradient(91.29deg, #821BD3 0.23%, #BA20D3 52.52%);
+    animation: rebond 3s ease-in-out infinite;
+  }
   }
   
 /* Styles pour les tablettes */
