@@ -608,6 +608,30 @@ h5.summary {
   background-clip: text;
 }
 
+.block_container {
+  display: flex; 
+  justify-content: space-around; 
+  padding-left: 150px;
+  padding-right: 150px;
+  gap: 50px;
+  margin-bottom: 70px;
+}
+
+.block {
+  width: 300px; 
+  text-align: center; 
+  padding: 25px;
+  border: solid 4px black;
+  border-radius: 30px;
+  background-color: #BA20D3;
+}
+
+.block img {
+  width: 100%; 
+  height: 200px; 
+  object-fit: cover; 
+}
+
 /* Button styles */
 
 .button {
