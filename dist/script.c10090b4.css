@@ -914,7 +914,7 @@ h5.summary {
 }
 
 .block a:hover{
-  transform: scale();
+  transform: scale(1.2);
 }
 
 .block_container .block {
